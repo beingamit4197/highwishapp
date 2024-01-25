@@ -4,6 +4,7 @@ import Space from "./UIassests/Space";
 import Footer from "./Footer";
 import Button from "./UIassests/Button";
 import Expander from "./Expander/Expander";
+import "./styles/landingPage.css";
 import phone1 from "../Assets/Illustration1.png";
 import phone2 from "../Assets/Illustration 2.png";
 import human1 from "../Assets/humaaans/sitting-8.png";
@@ -12,6 +13,8 @@ import human3 from "../Assets/humaaans/standing-3.png";
 import human4 from "../Assets/humaaans/standing-10.png";
 import human5 from "../Assets/humaaans/standing-16.png";
 import human6 from "../Assets/humaaans/standing-22.png";
+
+let isMobile = window.innerWidth < 768;
 
 export const FirstSection = () => {
   return (
@@ -23,23 +26,19 @@ export const FirstSection = () => {
             <Space lg />
             <div>
               <h1>Transform your DREAMS into REALITY</h1>
-              <p
-                style={{
-                  fontFamily: "Quicksand, sans-serif",
-                  color: "#37363B",
-                  fonSize: "60px",
-                  fontStyle: "normal",
-                  fontWeight: 500,
-                  lineHeight: "normal",
-                }}
-              >
+              <p>
                 At HighWishApps, we transform visions into reality, crafting
                 bespoke digital solutions that elevate your business to new
                 heights.
               </p>
             </div>
             <Space />
-            <div>
+            <div
+              style={{
+                display: isMobile ? "flex" : "",
+                justifyContent: "center",
+              }}
+            >
               <Button fullRound>Contact Us</Button>
               <Button withBorder fullRound>
                 Learn More
@@ -93,16 +92,7 @@ export const SecondSection = () => {
           <Col md={6}>
             <div>
               <h1>Services we offer</h1>
-              <p
-                style={{
-                  fontFamily: "Quicksand, sans-serif",
-                  color: "#37363B",
-                  fonSize: "60px",
-                  fontWeight: 500,
-                }}
-              >
-                Empowering Your Digital Success: Our Comprehensive Services
-              </p>
+              <p>Empowering Your Digital Success: Our Comprehensive Services</p>
             </div>
             <Space />
             <div>
@@ -226,7 +216,12 @@ export const SecondSection = () => {
               </Row>
             </div>
             <Space lg />
-            <div>
+            <div
+              style={{
+                display: isMobile ? "flex" : "",
+                justifyContent: "center",
+              }}
+            >
               <Button fullRound>Contact Us</Button>
               <Button withBorder fullRound>
                 Learn More
@@ -250,30 +245,20 @@ export const ThirdSection = () => {
         <Space lg />
         <Space lg />
         <Row center="xs">
-          <Col md={4}>
+          <Col md={4} sm={12}>
             <div
               style={{
                 borderRadius: "30px",
-                background: "#FFF",
-                boxShadow: "0px 20px 40px 0px rgba(0, 0, 0, 0.10)",
+                background: "var(--card-background)",
+                boxShadow: "0px 20px 20px 0px rgba(0, 0, 0, 0.10)",
                 padding: "20px",
-                width: "250px",
+                width: isMobile ? "300px" : "250px",
                 height: "400px",
                 flexShrink: 0,
+                margin: "auto",
               }}
             >
-              <img
-                src={human1}
-                alt=""
-                style={{
-                  width: "200px",
-                  height: "200px",
-                  top: "-15%",
-                  position: "relative",
-                  margin: "0",
-                  objectFit: "contain",
-                }}
-              />
+              <img src={human1} alt="" className="humans-img-card" />
 
               <p style={{ fontSize: "15px", textAlign: "left" }}>
                 <h3>Expertise and Experience</h3>
@@ -290,25 +275,17 @@ export const ThirdSection = () => {
               style={{
                 border: "1px solid #000",
                 borderRadius: "30px",
-                background: "#FFF",
-                boxShadow: "0px 20px 40px 0px rgba(0, 0, 0, 0.10)",
+                background: "var(--card-background)",
+                boxShadow: "0px 10px 20px 0px rgba(0, 0, 0, 0.10)",
                 padding: "20px",
-                width: "250px",
+                width: isMobile ? "300px" : "250px",
+                margin: "auto",
                 height: "400px",
                 flexShrink: 0,
+                marginTop: isMobile ? "5rem" : "",
               }}
             >
-              <img
-                src={human2}
-                alt=""
-                style={{
-                  width: "200px",
-                  height: "200px",
-                  position: "relative",
-                  top: "-15%",
-                  objectFit: "contain",
-                }}
-              />
+              <img src={human2} alt="" className="humans-img-card" />
 
               <p style={{ fontSize: "15px", textAlign: "left" }}>
                 <h3>Innovative Solutions</h3>
@@ -324,26 +301,17 @@ export const ThirdSection = () => {
             <div
               style={{
                 borderRadius: "30px",
-                background: "#FFF",
-                boxShadow: "0px 20px 40px 0px rgba(0, 0, 0, 0.10)",
+                background: "var(--card-background)",
+                boxShadow: "0px 10px 20px 0px rgba(0, 0, 0, 0.10)",
                 padding: "20px",
-                width: "250px",
+                width: isMobile ? "300px" : "250px",
+                margin: "auto",
                 height: "400px",
                 flexShrink: 0,
+                marginTop: isMobile ? "5rem" : "",
               }}
             >
-              <img
-                src={human3}
-                alt=""
-                style={{
-                  width: "200px",
-                  height: "200px",
-                  top: "-15%",
-                  position: "relative",
-                  margin: 0,
-                  objectFit: "contain",
-                }}
-              />
+              <img src={human3} alt="" className="humans-img-card" />
 
               <p style={{ fontSize: "15px", textAlign: "left" }}>
                 <h3>Client-Centric Approach</h3>
@@ -357,32 +325,23 @@ export const ThirdSection = () => {
         </Row>
         <Space lg />
         <Space lg />
-        <Row center="sm">
+        <Row center="xs">
           <Col md={4}>
             {" "}
             <div
               style={{
                 border: "1px solid #000",
                 borderRadius: "30px",
-                background: "#FFF",
-                boxShadow: "0px 20px 40px 0px rgba(0, 0, 0, 0.10)",
+                background: "var(--card-background)",
+                boxShadow: "0px 10px 20px 0px rgba(0, 0, 0, 0.10)",
                 padding: "20px",
-                width: "250px",
+                width: isMobile ? "300px" : "250px",
+                margin: "auto",
                 height: "400px",
-                flexShrink: 0,
+                // flexShrink: 0,
               }}
             >
-              <img
-                src={human4}
-                alt=""
-                style={{
-                  width: "200px",
-                  height: "200px",
-                  position: "relative",
-                  top: "-15%",
-                  objectFit: "contain",
-                }}
-              />
+              <img src={human4} alt="" className="humans-img-card" />
 
               <p style={{ fontSize: "15px", textAlign: "left" }}>
                 <h3>Quality Assurance</h3>
@@ -398,25 +357,17 @@ export const ThirdSection = () => {
             <div
               style={{
                 borderRadius: "30px",
-                background: "#FFF",
-                boxShadow: "0px 20px 40px 0px rgba(0, 0, 0, 0.10)",
+                background: "var(--card-background)",
+                boxShadow: "0px 10px 20px 0px rgba(0, 0, 0, 0.10)",
                 padding: "20px",
-                width: "250px",
+                width: isMobile ? "300px" : "250px",
+                margin: "auto",
                 height: "400px",
                 flexShrink: 0,
+                marginTop: isMobile ? "5rem" : "",
               }}
             >
-              <img
-                src={human5}
-                alt=""
-                style={{
-                  width: "200px",
-                  height: "200px",
-                  position: "relative",
-                  top: "-15%",
-                  objectFit: "contain",
-                }}
-              />
+              <img src={human5} alt="" className="humans-img-card" />
 
               <p style={{ fontSize: "15px", textAlign: "left" }}>
                 <h3>Timely Delivery</h3>
@@ -433,25 +384,17 @@ export const ThirdSection = () => {
               style={{
                 border: "1px solid #000",
                 borderRadius: "30px",
-                background: "#FFF",
-                boxShadow: "0px 20px 40px 0px rgba(0, 0, 0, 0.10)",
+                background: "var(--card-background)",
+                boxShadow: "0px 10px 20px 0px rgba(0, 0, 0, 0.10)",
                 padding: "20px",
-                width: "250px",
+                width: isMobile ? "300px" : "250px",
+                margin: "auto",
                 height: "400px",
                 flexShrink: 0,
+                marginTop: isMobile ? "5rem" : "",
               }}
             >
-              <img
-                src={human6}
-                alt=""
-                style={{
-                  width: "200px",
-                  height: "200px",
-                  position: "relative",
-                  top: "-15%",
-                  objectFit: "contain",
-                }}
-              />
+              <img src={human6} alt="" className="humans-img-card" />
 
               <p style={{ fontSize: "15px", textAlign: "left" }}>
                 <h3>Continuous Support</h3>
@@ -487,50 +430,52 @@ export const Prices = () => {
               style={{
                 border: "1px solid #000",
                 borderRadius: "30px",
-                background: "#FFF",
-                boxShadow: "0px 20px 40px 0px rgba(0, 0, 0, 0.10)",
+                background: "var(--card-color)",
+                boxShadow: "0px 10px 20px 0px rgba(0, 0, 0, 0.10)",
                 padding: "25px",
                 width: "350px",
                 height: "350px",
                 flexShrink: 0,
                 textAlign: "center",
-                lineHeight: "100%",
               }}
             >
               <h2>Individual Contractor</h2>
               <p>All prices all for an hour</p>
               <Space />
-              <Row between="lg">
-                <p style={{ color: "#6E6E6E", fontWeight: "bold" }}>
+              <Row between="xs">
+                <p className="paragraph" style={{ fontWeight: "bold" }}>
                   UI/UX Designer
                 </p>
                 <h3>$20</h3>
               </Row>
-              <Row between="lg">
-                <p style={{ color: "#6E6E6E", fontWeight: "bold" }}>
+              <Row between="xs">
+                <p className="paragraph" style={{ fontWeight: "bold" }}>
                   Frontend Developer
                 </p>
                 <h3>$20</h3>
               </Row>{" "}
-              <Row between="lg">
-                <p style={{ color: "#6E6E6E", fontWeight: "bold" }}>
+              <Row between="xs">
+                <p className="paragraph" style={{ fontWeight: "bold" }}>
                   Backend Developer
                 </p>
                 <h3>$20</h3>
               </Row>{" "}
-              <Row between="lg">
-                <p style={{ color: "#6E6E6E", fontWeight: "bold" }}>
+              <Row between="xs">
+                <p className="paragraph" style={{ fontWeight: "bold" }}>
                   FullStack Developer
                 </p>
                 <h3>$20</h3>
               </Row>
             </div>
           </Col>
-          <Col md={6}>
+          <Col
+            md={6}
+            style={{ display: "flex", justifyContent: "space-around" }}
+          >
             <div
               style={{
                 borderRadius: "30px",
-                boxShadow: "0px 20px 40px 0px rgba(0, 0, 0, 0.10)",
+                boxShadow: "0px 10px 20px 0px rgba(0, 0, 0, 0.10)",
                 padding: "25px",
                 width: "350px",
                 height: "350px",
@@ -538,9 +483,12 @@ export const Prices = () => {
                 textAlign: "center",
                 lineHeight: "100%",
                 background: "#F2F2F2",
+                marginTop: isMobile ? 50 : "",
               }}
             >
-              <h2>Product Development</h2>
+              <h2 style={{ color: "var(--prime-card-background)" }}>
+                Product Development
+              </h2>
               <Space lg />
               <Space />
               <i
@@ -556,15 +504,24 @@ export const Prices = () => {
                 style={{
                   fontSize: "25px",
                   lineHeight: "normal",
+                  color: "var(--prime-card-background",
                 }}
               >
                 Calculate an estimated cost with our product cost calculator
               </p>
-              <Button fullRound>Open Cost Calculator</Button>
+              <Button
+                style={{
+                  backgroundColor: "var(--prime-card-background)",
+                  color: "white",
+                  bottom: isMobile ? "10px" : "",
+                }}
+                fullRound
+              >
+                Open Cost Calculator
+              </Button>
             </div>
           </Col>
         </Row>
-        <Space lg />
         <Space lg />
         <Space lg />
       </Grid>

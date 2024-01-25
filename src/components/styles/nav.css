@@ -1,0 +1,7 @@
+.nav-items {
+  text-align: "center";
+  color: var(--header-color);
+  font-size: 15;
+  font-weight: 700;
+  margin-right: 2rem;
+}

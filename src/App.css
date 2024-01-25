@@ -4,17 +4,18 @@
 /* Quicksand for body */
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Quicksand:wght@300..700&display=swap");
 
-@import '@fortawesome/fontawesome-free/css/all.css';
+@import "@fortawesome/fontawesome-free/css/all.css";
 
 body {
   font-family: "Quicksand", sans-serif;
+  background-color: var(--main-background-color);
 }
 button {
   font-family: "Quicksand", sans-serif;
 }
 
 h1 {
-  color: "#37363B";
+  color: var(--header-color);
   font-family: "Alfa Slab One";
   font-size: "40px";
   font-style: "normal";
@@ -23,18 +24,36 @@ h1 {
 }
 
 h2 {
-    color: "#37363B";
-    font-family: "Alfa Slab One";
-    font-size: "40px";
-    font-style: "normal";
-    font-weight: 300;
-    line-height: "normal";
+  color: var(--header-color);
+  font-family: "Alfa Slab One";
+  font-size: "40px";
+  font-style: "normal";
+  font-weight: 300;
+  line-height: "normal";
 }
-
+h3{
+  color: var(--header-color);
+}
+h4 {
+  color: var(--header-color);
+  font-weight: 500;
+}
+p {
+  color: var(--main-font-color);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+ul {
+  color: var(--header-color);
+}
+.paragraph {
+  color: var(--header-color)
+}
 .default {
   --button-height: 3rem;
-  --btn-gradient-color: #37363B;
-  --btn-gradient: #37363B;
+  --btn-gradient-color: #37363b;
+  --btn-gradient: #37363b;
   --main-font-color: #aaa;
   --border-color: #2a2c2d;
   --theme-color: #fff;
@@ -152,7 +171,7 @@ h2 {
   --prime-card-background: #222222;
   --prime-card-title: #fff;
   --prime-card-subtitle: #aaa;
-  --theme-color: #37363B;
+  --theme-color: #37363b;
   --input-background: #f5f5f5;
   --loader-color: #333333;
   --btn-disabled: #999;
@@ -167,7 +186,7 @@ h2 {
   --logo-color: #222;
   --translucent: #fffffffe;
   --main-font-color: #6d6d6d;
-  --header-color: #333333;
+  --header-color: #37363b;
   --main-background-color: #fff;
   --card-icon-background: #66666622;
   --dialog-background: #f7f7f7aa;

@@ -21,9 +21,11 @@ const Footer = () => {
             alt=""
             style={{ width: "250px", height: "300px" }}
           />
-          <p style={{ fontWeight: "bold", fontSize: "25px" }}>HighWishApp</p>
+          <p style={{ fontWeight: "bold", fontSize: "25px", color: "white" }}>
+            HighWishApp
+          </p>
           <Space lg />
-          <h1>Contact Us</h1>
+          <h1 style={{ color: "white" }}>Contact Us</h1>
           <p>Feel free to reach out to us at</p>
           <Space />
           <p style={{ fontSize: "25px" }}>product@highwishapps.com</p>
