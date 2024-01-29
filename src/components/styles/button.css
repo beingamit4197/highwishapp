@@ -25,7 +25,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 .btn-primary .fas {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .jumbotron-action .btn-primary .fas {
   margin-right: 1rem;
@@ -56,7 +56,7 @@
   height: var(--button-height) !important;
   border-radius: 50%;
   padding: 0 !important;
-  border: 1px solid var(--border-color) !important;
+  border: 2.622px solid var(--main-font-color);
 }
 h1 > button {
   position: relative;
@@ -123,10 +123,10 @@ h1 > button {
 }
 
 .btn-small {
-  padding: 0 2rem;
-  font-size: 1.9rem;
-  height: 4rem !important;
-  min-width: 10rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+  height: 3rem !important;
+  min-width: 4rem;
 }
 .btn-primary > span:first-child {
   margin-left: 0;
@@ -228,7 +228,7 @@ a {
   font-size: 15px;
   border-radius: 52.439px;
   border: 2.622px solid var(--main-font-color);
-  margin-left: 20px;
+  margin-left: 10px;
   color: var(--btn-gradient);
 }
 .fileContainer p {
@@ -423,7 +423,7 @@ button .lnr {
 
   .btn-small {
     width: auto;
-    height: 5rem;
+    height: 2rem;
   }
   .btn-circle {
     font-size: 2rem;
