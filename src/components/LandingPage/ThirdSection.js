@@ -7,7 +7,12 @@ import human3 from "../../Assets/humaaans/standing-3.png";
 import human4 from "../../Assets/humaaans/standing-10.png";
 import human5 from "../../Assets/humaaans/standing-16.png";
 import human6 from "../../Assets/humaaans/standing-22.png";
-import { isMobile } from "../UIassests/GeneralActions";
+import Card from "../UIassests/Card";
+
+const paraStyle = {
+  fontSize: "15px",
+  textAlign: "left",
+};
 
 const ThirdSection = () => {
   return (
@@ -21,81 +26,45 @@ const ThirdSection = () => {
         <Space lg />
         <Row center="xs">
           <Col md={4} sm={12}>
-            <div
-              style={{
-                borderRadius: "30px",
-                background: "var(--card-background)",
-                boxShadow: "0px 20px 20px 0px rgba(0, 0, 0, 0.10)",
-                padding: "20px",
-                width: isMobile ? "300px" : "250px",
-                height: "400px",
-                flexShrink: 0,
-                margin: "auto",
-              }}
-            >
+            <Card>
               <img src={human1} alt="" className="humans-img-card" />
 
-              <p style={{ fontSize: "15px", textAlign: "left" }}>
+              <p style={paraStyle}>
                 <h3>Expertise and Experience</h3>
                 Benefit from our team's extensive expertise and years of
                 experience in web and mobile app development. We bring a wealth
                 of knowledge to the table, ensuring your project is in capable
                 hands.
               </p>
-            </div>
+            </Card>
           </Col>
           <Col md={4}>
             {" "}
-            <div
-              style={{
-                border: "1px solid #000",
-                borderRadius: "30px",
-                background: "var(--card-background)",
-                boxShadow: "0px 10px 20px 0px rgba(0, 0, 0, 0.10)",
-                padding: "20px",
-                width: isMobile ? "300px" : "250px",
-                margin: "auto",
-                height: "400px",
-                flexShrink: 0,
-                marginTop: isMobile ? "5rem" : "",
-              }}
-            >
+            <Card withBorder>
               <img src={human2} alt="" className="humans-img-card" />
 
-              <p style={{ fontSize: "15px", textAlign: "left" }}>
+              <p style={paraStyle}>
                 <h3>Innovative Solutions</h3>
                 Work with a team that thrives on innovation. We don't just
                 deliver solutions; we provide innovative approaches that set
                 your project apart, ensuring it stands out in today's
                 competitive digital landscape.
               </p>
-            </div>
+            </Card>
           </Col>
           <Col md={4}>
             {" "}
-            <div
-              style={{
-                borderRadius: "30px",
-                background: "var(--card-background)",
-                boxShadow: "0px 10px 20px 0px rgba(0, 0, 0, 0.10)",
-                padding: "20px",
-                width: isMobile ? "300px" : "250px",
-                margin: "auto",
-                height: "400px",
-                flexShrink: 0,
-                marginTop: isMobile ? "5rem" : "",
-              }}
-            >
+            <Card>
               <img src={human3} alt="" className="humans-img-card" />
 
-              <p style={{ fontSize: "15px", textAlign: "left" }}>
+              <p style={paraStyle}>
                 <h3>Client-Centric Approach</h3>
                 Experience a service tailored to your needs. Our client-centric
                 approach means open communication, a keen understanding of your
                 goals, and a commitment to delivering solutions that align with
                 your vision.
               </p>
-            </div>
+            </Card>
           </Col>
         </Row>
         <Space lg />
@@ -103,82 +72,44 @@ const ThirdSection = () => {
         <Row center="xs">
           <Col md={4}>
             {" "}
-            <div
-              style={{
-                border: "1px solid #000",
-                borderRadius: "30px",
-                background: "var(--card-background)",
-                boxShadow: "0px 10px 20px 0px rgba(0, 0, 0, 0.10)",
-                padding: "20px",
-                width: isMobile ? "300px" : "250px",
-                margin: "auto",
-                height: "400px",
-                // flexShrink: 0,
-              }}
-            >
+            <Card withBorder>
               <img src={human4} alt="" className="humans-img-card" />
 
-              <p style={{ fontSize: "15px", textAlign: "left" }}>
+              <p style={paraStyle}>
                 <h3>Quality Assurance</h3>
                 Rest easy knowing that quality is at the forefront of our work.
                 Rigorous testing and quality assurance processes are embedded in
                 our development cycle, ensuring a seamless, bug-free experience
                 for your users.
               </p>
-            </div>
+            </Card>
           </Col>
           <Col md={4}>
             {" "}
-            <div
-              style={{
-                borderRadius: "30px",
-                background: "var(--card-background)",
-                boxShadow: "0px 10px 20px 0px rgba(0, 0, 0, 0.10)",
-                padding: "20px",
-                width: isMobile ? "300px" : "250px",
-                margin: "auto",
-                height: "400px",
-                flexShrink: 0,
-                marginTop: isMobile ? "5rem" : "",
-              }}
-            >
+            <Card>
               <img src={human5} alt="" className="humans-img-card" />
 
-              <p style={{ fontSize: "15px", textAlign: "left" }}>
+              <p style={paraStyle}>
                 <h3>Timely Delivery</h3>
                 We value your time as much as you do. With a commitment to
                 timely delivery, you can trust us to meet deadlines and
                 milestones, ensuring your project progresses smoothly and
                 efficiently.
               </p>
-            </div>
+            </Card>
           </Col>
           <Col md={4}>
-            {" "}
-            <div
-              style={{
-                border: "1px solid #000",
-                borderRadius: "30px",
-                background: "var(--card-background)",
-                boxShadow: "0px 10px 20px 0px rgba(0, 0, 0, 0.10)",
-                padding: "20px",
-                width: isMobile ? "300px" : "250px",
-                margin: "auto",
-                height: "400px",
-                flexShrink: 0,
-                marginTop: isMobile ? "5rem" : "",
-              }}
-            >
+            <Card withBorder>
               <img src={human6} alt="" className="humans-img-card" />
 
-              <p style={{ fontSize: "15px", textAlign: "left" }}>
+              <p style={paraStyle}>
                 <h3>Continuous Support</h3>
                 Our relationship doesn't end with project delivery. Enjoy
                 continuous support and maintenance services, ensuring your
                 application remains up-to-date, secure, and ready to adapt to
                 future technological advancements.
               </p>
-            </div>
+            </Card>{" "}
           </Col>
         </Row>
       </Grid>

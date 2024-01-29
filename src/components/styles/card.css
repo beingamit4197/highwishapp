@@ -7,3 +7,12 @@
   height: 400px;
   flex-shrink: 0, margin;
 }
+.humans-card.with-border {
+  border: 1px solid var(--main-font-color);
+}
+
+@media only screen and (max-width: 766px) {
+  .humans-card {
+    margin-top: 5rem;
+  }
+}

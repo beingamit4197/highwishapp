@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Col, Grid, Row } from "react-flexbox-grid";
-import Space from "./UIassests/Space";
-import Button from "./UIassests/Button";
-import logoBlack from "../Assets/HighWish Logo Black.png";
-import "./styles/nav.css";
+import Space from "../UIassests/Space";
+import Button from "../UIassests/Button";
+import logoBlack from "../../Assets/HighWish Logo Black.png";
+import "../styles/nav.css";
 
 const Nav = () => {
   const toggleTheme = () =>
@@ -37,17 +37,7 @@ const Nav = () => {
           <Col lg={4} md={4} sm={4}>
             <img src={logoBlack} alt="" />
           </Col>
-          <Col
-            lg={5}
-            md={5}
-            sm={6}
-            style={
-              {
-                // display: "flex",
-                // flexDirection: "row",
-              }
-            }
-          >
+          <Col lg={5} md={5} sm={6}>
             <Row>
               <div className="nav-items">Services</div>
               <div className="nav-items">Why us?</div>
