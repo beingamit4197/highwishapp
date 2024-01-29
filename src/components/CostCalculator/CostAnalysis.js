@@ -5,7 +5,7 @@ const CostAnalysis = ({ totalDays }) => {
   return (
     <>
       <Grid>
-        <h2>Cost Analysis</h2>
+        <h2 style={{ textAlign: "center" }}>Cost Analysis</h2>
         <Row between="xs">
           <p>App Type</p>
           <h3>Web</h3>

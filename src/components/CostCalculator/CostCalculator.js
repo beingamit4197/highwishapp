@@ -7,6 +7,7 @@ import WebQuestions from "./WebQuestions";
 import Footer from "../Footer";
 import Space from "../UIassests/Space";
 import IosQuestions from "./iOSQuestions";
+import AndroidQuestions from "./AndroidQuestions";
 
 const CostCalculator = () => {
   const [totalDays, setTotalDays] = useState(0);
@@ -35,7 +36,12 @@ const CostCalculator = () => {
                   setTotalDays={setTotalDays}
                 />
               </Tab>
-              <Tab label="Android App"></Tab>
+              <Tab label="Android App">
+                <AndroidQuestions
+                  totalDays={totalDays}
+                  setTotalDays={setTotalDays}
+                />
+              </Tab>
             </Tabs>
           </Col>
           <Col md={4}>
