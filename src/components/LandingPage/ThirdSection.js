@@ -8,6 +8,7 @@ import human4 from "../../Assets/humaaans/standing-10.png";
 import human5 from "../../Assets/humaaans/standing-16.png";
 import human6 from "../../Assets/humaaans/standing-22.png";
 import Card from "../UIassests/Card";
+import { isMobile } from "../UIassests/GeneralActions";
 
 const paraStyle = {
   fontSize: "15px",
@@ -22,10 +23,16 @@ const ThirdSection = () => {
           <h1>Why choose us?</h1>
           <p>There are few reasons you to choose us which are listed below</p>
         </div>
-        <Space lg />
-        <Space lg />
+        {isMobile ? (
+          ""
+        ) : (
+          <>
+            <Space lg />
+            <Space lg />
+          </>
+        )}
         <Row center="xs">
-          <Col md={4} sm={12}>
+          <Col md={4} xs={12}>
             <Card>
               <img src={human1} alt="" className="humans-img-card" />
 
@@ -38,7 +45,7 @@ const ThirdSection = () => {
               </p>
             </Card>
           </Col>
-          <Col md={4}>
+          <Col md={4} xs={12}>
             {" "}
             <Card withBorder>
               <img src={human2} alt="" className="humans-img-card" />
@@ -52,7 +59,7 @@ const ThirdSection = () => {
               </p>
             </Card>
           </Col>
-          <Col md={4}>
+          <Col md={4} xs={12}>
             {" "}
             <Card>
               <img src={human3} alt="" className="humans-img-card" />
@@ -67,10 +74,16 @@ const ThirdSection = () => {
             </Card>
           </Col>
         </Row>
-        <Space lg />
-        <Space lg />
+        {isMobile ? (
+          ""
+        ) : (
+          <>
+            <Space lg />
+            <Space lg />
+          </>
+        )}
         <Row center="xs">
-          <Col md={4}>
+          <Col md={4} xs={12}>
             {" "}
             <Card withBorder>
               <img src={human4} alt="" className="humans-img-card" />
@@ -84,7 +97,7 @@ const ThirdSection = () => {
               </p>
             </Card>
           </Col>
-          <Col md={4}>
+          <Col md={4} xs={12}>
             {" "}
             <Card>
               <img src={human5} alt="" className="humans-img-card" />
@@ -98,7 +111,7 @@ const ThirdSection = () => {
               </p>
             </Card>
           </Col>
-          <Col md={4}>
+          <Col md={4} xs={12}>
             <Card withBorder>
               <img src={human6} alt="" className="humans-img-card" />
 

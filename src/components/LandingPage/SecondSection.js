@@ -45,7 +45,7 @@ const SecondSection = () => {
                     expanded={expandedExpander === "UI/UX Design"}
                     onToggle={() => handleExpanderToggle("UI/UX Design")}
                   >
-                    <ul style={{ marginLeft: 5, lineHeight: "2rem" }}>
+                    <ul style={{ marginLeft: 3, lineHeight: "2rem" }}>
                       <li>
                         Customized user interface design to enhance user
                         experience.
@@ -75,7 +75,7 @@ const SecondSection = () => {
                       handleExpanderToggle("Mobile App Development")
                     }
                   >
-                    <ul style={{ marginLeft: 5, lineHeight: "2rem" }}>
+                    <ul style={{ marginLeft: 2, lineHeight: "2rem" }}>
                       <li>
                         Native app development for iOS and Android platforms.
                       </li>
@@ -103,7 +103,7 @@ const SecondSection = () => {
                     expanded={expandedExpander === "Website Development"}
                     onToggle={() => handleExpanderToggle("Website Development")}
                   >
-                    <ul style={{ marginLeft: 5, lineHeight: "2rem" }}>
+                    <ul style={{ marginLeft: 3, lineHeight: "2rem" }}>
                       <li>
                         Front-end development using modern web technologies
                         (HTML, CSS, JavaScript).
@@ -135,7 +135,7 @@ const SecondSection = () => {
                       handleExpanderToggle("Desktop Software Development")
                     }
                   >
-                    <ul style={{ marginLeft: 5, lineHeight: "2rem" }}>
+                    <ul style={{ marginLeft: 3, lineHeight: "2rem" }}>
                       <li>
                         Development of desktop applications for Windows, macOS,
                         or Linux.

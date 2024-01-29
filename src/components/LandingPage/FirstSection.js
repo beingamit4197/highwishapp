@@ -24,8 +24,7 @@ const FirstSection = () => {
             <Space />
             <div
               style={{
-                display: isMobile ? "flex" : "",
-                justifyContent: "center",
+                textAlign: isMobile ? "center" : "left",
               }}
             >
               <Button fullRound>Contact Us</Button>

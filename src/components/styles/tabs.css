@@ -40,7 +40,7 @@
   background-color: var(--card-background);
   border-radius: var(--radius);
   min-height: 4.5rem;
-  margin-right: 2rem;
+  /* margin-right: 2rem; */
 }
 .tabs-v3 > .tabs-button-container .tab-button {
   border: 3px solid transparent;
@@ -54,16 +54,20 @@
 }
 .tab-button:hover {
   border-bottom: 3px solid var(--main-font-color);
+  /* background: var(--btn-disabled); */
+  /* color: var(--btn-gradient-color); */
 }
 
 .tab-button.active {
-  color: var(--white);
+  color: var(--main-background-color);
   border-bottom: none;
   cursor: default;
   border-right: none;
-  color: var(--theme-color);
   border-top: none;
   border-bottom: 3px solid var(--theme-color);
+  background: var(--theme-color);
+  padding: 0 2rem;
+
   /* box-shadow: var(--btn-primary-shadow); */
 }
 .tab-button.active:last-child {
@@ -94,9 +98,11 @@
 
 @media only screen and (max-width: 600px) {
   .tabs-button-container {
-    justify-content: center;
+    /* justify-content: center; */
+    text-align: center;
   }
   .tab-button {
-    min-height: 6rem;
+    min-height: 3rem;
+    font-size: 0.9rem;
   }
 }
