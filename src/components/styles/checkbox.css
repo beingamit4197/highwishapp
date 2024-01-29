@@ -1,0 +1,7 @@
+.checkbox-with-circle input[type="checkbox"] {
+  border-radius: 50%;
+  border: 2px solid black;
+}
+.checkbox-with-circle input[type="checkbox"]::after {
+  background-color: black;
+}

@@ -31,7 +31,7 @@ h2 {
   font-weight: 300;
   line-height: "normal";
 }
-h3{
+h3 {
   color: var(--header-color);
 }
 h4 {
@@ -44,11 +44,17 @@ p {
   font-weight: 500;
   line-height: normal;
 }
+span {
+  color: var(--main-font-color);
+  font-weight: 500;
+  line-height: normal;
+  font-family: "Quicksand", sans-serif;
+}
 ul {
   color: var(--header-color);
 }
 .paragraph {
-  color: var(--header-color)
+  color: var(--header-color);
 }
 .default {
   --button-height: 3rem;
