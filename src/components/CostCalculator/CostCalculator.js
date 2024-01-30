@@ -15,10 +15,25 @@ const CostCalculator = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // const handleReset = () => {
+  //   setTotalDays(0);
+  //   const icon = document.querySelector(".fas.fa-arrows-rotate");
+  //   if (icon) {
+  //     icon.classList.add("rotate-360");
+  //   }
+  // };
   return (
     <>
       <Grid>
-        <h1 style={{ textAlign: "center" }}>Cost Calculator</h1>
+        <h1 style={{ textAlign: "center" }}>
+          Cost Calculator
+          {/* {totalDays > 0 ? (
+            <span className="fas fa-arrows-rotate" onClick={handleReset} />
+          ) : (
+            ""
+          )} */}
+        </h1>
         <Row>
           <Col md={8}>
             <h2>Features</h2>

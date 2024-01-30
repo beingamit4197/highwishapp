@@ -1,9 +1,13 @@
 import React from "react";
 import "../styles/card.css";
 
-const Card = ({ children, withBorder }) => {
+const Card = ({ children, withBorder, horizontal }) => {
   return (
-    <div className={`humans-card ${withBorder ? "with-border" : ""}`}>
+    <div
+      className={`humans-card ${
+        withBorder ? "with-border" : horizontal ? "horizontal-card" : ""
+      }`}
+    >
       {children}
     </div>
   );

@@ -5,3 +5,7 @@
 .checkbox-with-circle input[type="checkbox"]::after {
   background-color: black;
 }
+
+input[type="checkbox"] {
+  accent-color: desired-color;
+}

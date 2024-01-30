@@ -22,7 +22,7 @@ const Prices = () => {
           >
             <div
               style={{
-                border: "1px solid #000",
+                border: "1px solid var(--main-font-color)",
                 borderRadius: "30px",
                 background: "var(--card-color)",
                 boxShadow: "0px 10px 20px 0px rgba(0, 0, 0, 0.10)",

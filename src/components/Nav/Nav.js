@@ -49,7 +49,13 @@ const Nav = () => {
               <Button fullRound withBorder>
                 Let's Connect
               </Button>
-              <Button circle withBorder>
+              <Button
+                circle
+                withBorder
+                onClick={() => {
+                  themeSetter(toggleTheme());
+                }}
+              >
                 <span
                   style={{
                     cursor: "pointer",
@@ -57,9 +63,6 @@ const Nav = () => {
                   }}
                   className={themeIcon}
                   to="#"
-                  onClick={() => {
-                    themeSetter(toggleTheme());
-                  }}
                 ></span>{" "}
               </Button>
             </Row>
