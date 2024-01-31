@@ -1,0 +1,27 @@
+.invalid-feedback {
+  color: var(--red);
+  font-size: 0.9em;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  color: var(--main-font-color);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  background: var(--main-background-color);
+  color: var(--main-font-color);
+  font-weight: bold;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}

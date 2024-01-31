@@ -1,24 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/why_us.css";
 import { Col, Grid, Row } from "react-flexbox-grid";
-// import svg from "../../Assets/svgs/customization.svg";
 import Space from "../UIassests/Space";
 import Card from "../UIassests/Card";
 import Header from "../UIassests/Header";
 import Footer from "../Footer";
-
-const CardSVG = ({ type }) => {
-  const svg = require(`../../Assets/svgs/${type}.svg`);
-  return (
-    <>
-      <Row center="xs">
-        <img src={svg} alt="" className="why-us-svg" />
-      </Row>
-    </>
-  );
-};
+import SVGs from "../UIassests/SVG";
 
 const WhyUs = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
   return (
     <Grid>
       <div>
@@ -34,7 +26,7 @@ const WhyUs = () => {
                   of experience in developing cutting-edge digital solutions.
                 </Col>
                 <Col md={4} xs={2}>
-                  <CardSVG className={"card-svg"} type="customization" />
+                  <SVGs className={"card-SVG"} type="customization" />
                 </Col>
               </Row>
             </Card>
@@ -47,7 +39,7 @@ const WhyUs = () => {
                   requirements.
                 </Col>
                 <Col md={4} xs={2}>
-                  <CardSVG type="solution" />
+                  <SVGs type="solution" />
                 </Col>
               </Row>
             </Card>
@@ -60,7 +52,7 @@ const WhyUs = () => {
                   forward-thinking solutions.
                 </Col>
                 <Col md={4} xs={2}>
-                  <CardSVG type="innovative" />
+                  <SVGs type="innovative" />
                 </Col>
               </Row>
             </Card>
@@ -75,7 +67,7 @@ const WhyUs = () => {
                   exceed expectations.
                 </Col>
                 <Col md={4} xs={2}>
-                  <CardSVG type="tracking" />
+                  <SVGs type="tracking" />
                 </Col>
               </Row>
             </Card>
@@ -88,7 +80,7 @@ const WhyUs = () => {
                   overall experience of working with us.
                 </Col>
                 <Col md={4} xs={2}>
-                  <CardSVG type="happy" />
+                  <SVGs type="happy" />
                 </Col>
               </Row>
             </Card>
@@ -101,7 +93,7 @@ const WhyUs = () => {
                   step of the way.
                 </Col>
                 <Col md={4} xs={2}>
-                  <CardSVG type="teamwork" />
+                  <SVGs type="teamwork" />
                 </Col>
               </Row>
             </Card>

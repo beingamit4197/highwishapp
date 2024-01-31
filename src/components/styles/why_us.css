@@ -9,13 +9,14 @@
 }
 
 li {
-  line-height: 2rem;
+  line-height: 1rem;
 }
 
 @media only screen and (max-width: 766px) {
   .why-us-svg {
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 100% !important;
     object-fit: contain;
+    overflow: auto;
   }
 }

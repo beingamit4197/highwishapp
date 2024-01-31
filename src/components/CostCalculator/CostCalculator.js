@@ -38,6 +38,10 @@ const CostCalculator = () => {
           <Col md={8}>
             <h2>Features</h2>
             <p>Please select the features you want in your app?</p>
+            <p>
+              All estimates are approximate but should give you a rough idea of
+              what it will take to build your app.
+            </p>
             <Tabs>
               <Tab label="Web App">
                 <WebQuestions

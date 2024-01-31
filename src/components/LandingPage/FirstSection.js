@@ -4,8 +4,10 @@ import Space from "../UIassests/Space";
 import Button from "../UIassests/Button";
 import phone1 from "../../Assets/Illustration1.png";
 import { isMobile } from "../UIassests/GeneralActions";
+import { useNavigate } from "react-router-dom";
 
 const FirstSection = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Grid>
@@ -27,8 +29,10 @@ const FirstSection = () => {
                 textAlign: isMobile ? "center" : "left",
               }}
             >
-              <Button fullRound>Contact Us</Button>
-              <Button withBorder fullRound>
+              <Button fullRound onClick={() => navigate("/contact_us")}>
+                Contact Us
+              </Button>
+              <Button withBorder fullRound onClick={() => navigate("/why_us")}>
                 Learn More
               </Button>
             </div>

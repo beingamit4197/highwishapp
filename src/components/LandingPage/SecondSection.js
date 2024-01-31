@@ -5,8 +5,10 @@ import Expander from "../Expander/Expander";
 import Button from "../UIassests/Button";
 import phone2 from "../../Assets/Illustration 2.png";
 import { isMobile } from "../UIassests/GeneralActions";
+import { useNavigate } from "react-router-dom";
 
 const SecondSection = () => {
+  const navigate = useNavigate();
   const [expandedExpander, setExpandedExpander] = useState(null);
 
   const handleExpanderToggle = (expanderTitle) => {
@@ -164,8 +166,10 @@ const SecondSection = () => {
                 justifyContent: "center",
               }}
             >
-              <Button fullRound>Contact Us</Button>
-              <Button withBorder fullRound>
+              <Button fullRound onClick={() => navigate("/contact_us")}>
+                Contact Us
+              </Button>
+              <Button withBorder fullRound onClick={() => navigate("/why_us")}>
                 Learn More
               </Button>
             </div>
