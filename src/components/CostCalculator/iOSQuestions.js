@@ -3,10 +3,14 @@ import Expander from "../Expander/Expander";
 import { isMobile } from "../UIassests/GeneralActions";
 import { Grid } from "react-flexbox-grid";
 import Checkbox from "../UIassests/Checkbox";
+import Space from "../UIassests/Space";
+import Button from "../UIassests/Button";
+import Dialog from "../UIassests/Dialog";
 
 const IosQuestions = ({ totalDays, setTotalDays }) => {
   const [expandedExpander, setExpandedExpander] = useState(null);
   const [answers, setAnswers] = useState({});
+  const [dialog, setDialog] = useState();
 
   const iOSQuestions = [
     {
@@ -187,6 +191,28 @@ const IosQuestions = ({ totalDays, setTotalDays }) => {
           </Expander>
         </div>
       ))}
+      <Space lg />
+      <Button onClick={() => setDialog(true)}>Review Your Selection</Button>
+      <Dialog open={dialog} onClose={() => setDialog()}>
+        <div style={{ maxHeight: "400px", overflowY: "auto" }}>
+          <h2>Selected Features You Require in iOS</h2>
+          <Space />
+          {Object.entries(answers).map(([question, selectedAnswers]) => (
+            <div key={question}>
+              <h3>{question}</h3>
+              <ul>
+                {selectedAnswers.map((selectedAnswer) => (
+                  <li key={selectedAnswer.label}>
+                    <p>
+                      {selectedAnswer.label} - {selectedAnswer.days} days
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </Dialog>
     </>
   );
 };

@@ -3,10 +3,15 @@ import Expander from "../Expander/Expander";
 import { Grid } from "react-flexbox-grid";
 import Checkbox from "../UIassests/Checkbox";
 import { isMobile } from "../UIassests/GeneralActions";
+import Button from "../UIassests/Button";
+import Dialog from "../UIassests/Dialog";
+import Space from "../UIassests/Space";
 
 const WebQuestions = ({ totalDays, setTotalDays }) => {
   const [expandedExpander, setExpandedExpander] = useState(null);
   const [answers, setAnswers] = useState({});
+  const [dialog, setDialog] = useState();
+
   const webQuestions = [
     {
       label: "How big is your app?",
@@ -111,7 +116,7 @@ const WebQuestions = ({ totalDays, setTotalDays }) => {
         { label: "Moderation / Content Approval", days: 4 },
         { label: "Intercom", days: 3 },
         { label: "Usage Analytics", days: 3 },
-        { label: "Crash Reporting", days: 0 },
+        { label: "Crash Reporting", days: 1 },
         { label: "Performance Monitoring", days: 1 },
         { label: "Multilingual Support", days: 2 },
       ],
@@ -211,6 +216,28 @@ const WebQuestions = ({ totalDays, setTotalDays }) => {
           </Expander>
         </div>
       ))}
+      <Space lg />
+      <Button onClick={() => setDialog(true)}>Review Your Selection</Button>
+      <Dialog open={dialog} onClose={() => setDialog()}>
+        <div style={{ maxHeight: "400px", overflowY: "auto" }}>
+          <h2>Selected Features You Require in Web</h2>
+          <Space />
+          {Object.entries(answers).map(([question, selectedAnswers]) => (
+            <div key={question}>
+              <h3>{question}</h3>
+              <ul>
+                {selectedAnswers.map((selectedAnswer) => (
+                  <li key={selectedAnswer.label}>
+                    <p>
+                      {selectedAnswer.label} - {selectedAnswer.days} days
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </Dialog>
     </>
   );
 };
