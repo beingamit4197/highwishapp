@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Expander from "../Expander/Expander";
 import { Grid } from "react-flexbox-grid";
 import Checkbox from "../UIassests/Checkbox";
 import { isMobile } from "../UIassests/GeneralActions";
 
 const WebQuestions = ({ totalDays, setTotalDays }) => {
+  const [expandedExpander, setExpandedExpander] = useState(null);
+  const [answers, setAnswers] = useState({});
   const webQuestions = [
     {
       label: "How big is your app?",
+      type: "radio",
+
       answers: [
         {
           label: "Small",
@@ -25,6 +29,8 @@ const WebQuestions = ({ totalDays, setTotalDays }) => {
     },
     {
       label: "What level of UI would you like?",
+      type: "radio",
+
       answers: [
         {
           label: "Basic MVP",
@@ -136,29 +142,44 @@ const WebQuestions = ({ totalDays, setTotalDays }) => {
     },
   ];
 
-  const [expandedExpander, setExpandedExpander] = useState(null);
-  const [isChecked, setIsChecked] = useState(false);
-
   const handleExpanderToggle = (expanderTitle) => {
     setExpandedExpander((prevExpanded) =>
       prevExpanded === expanderTitle ? null : expanderTitle
     );
   };
 
-  const handleCheckboxChange = (groupLabel, answer) => {
-    if (!isChecked[groupLabel]?.[answer.label]) {
-      setTotalDays(totalDays + answer.days);
-    } else {
-      setTotalDays(totalDays - answer.days);
-    }
-    // console.log({ totalDays, days: answer.days });
-    setIsChecked((prev) => {
-      const groupState = { ...prev[groupLabel] };
-      groupState[answer.label] = !groupState[answer.label];
-      return { ...prev, [groupLabel]: groupState };
-    });
+  const addOnClick = (question, answer, isMulti) => {
+    let temp = { ...answers };
+    console.log("temp[question]", temp[question]);
+    temp[question] = isMulti
+      ? temp[question]
+        ? temp[question]?.some((a) => a.label === answer.label)
+          ? temp[question]
+            ? [...temp[question]?.filter((a) => a.label !== answer.label)]
+            : []
+          : [...temp[question], answer]
+        : [answer]
+      : [answer];
+    console.log(isMulti, temp);
+    setAnswers({ ...temp });
   };
 
+  const stringOfAnswers = JSON.stringify(answers);
+  useEffect(() => {
+    let a = Object.values(answers);
+    if (a.length > 0) {
+      a = a.flat(); // a = a.map(b => b.days)
+      a = a.map((a) => a.days);
+
+      a = a.length > 0 ? a.reduce((a, b) => a + b) : 0;
+
+      console.log("test", a);
+      setTotalDays(a);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [stringOfAnswers]);
+
+  console.log({ answers: answers, stringOfAnswers: stringOfAnswers });
   return (
     <>
       {webQuestions.map((q) => (
@@ -174,9 +195,15 @@ const WebQuestions = ({ totalDays, setTotalDays }) => {
                   <Checkbox
                     title={a.label}
                     subtitle={a.days}
-                    onClick={() => handleCheckboxChange(q.label, a)}
-                    isChecked={isChecked[q.label]?.[a.label] || false}
+                    onClick={() => {
+                      addOnClick(q.label, a, q.type !== "radio");
+                    }}
+                    isChecked={
+                      answers[q.label]?.some((ans) => ans.label === a.label) ||
+                      false
+                    }
                     checkCircle
+                    isRadio={q.type === "radio"}
                   />
                 </Grid>
               </>

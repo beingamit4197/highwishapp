@@ -56,59 +56,61 @@ const CostAnalysis = ({ totalDays, setTotalDays, appType }) => {
   return (
     <>
       <Grid>
-        <h2 style={{ textAlign: "center" }}>Cost Analysis </h2>
-        <Row between="xs">
-          <p>App Type</p>
-          <h3>{appType ? "" : "Web"}</h3>
-        </Row>
-        <Row between="xs">
-          <p>Total Days</p>
-          <h3>{totalDays}</h3>
-        </Row>{" "}
-        <Row between="xs">
-          <p>Hours Per Day</p>
-          <h3>$8</h3>
-        </Row>{" "}
-        <Row className="border-bottom" between="xs">
-          <p>Per Hours Price</p>
-          <h3>$15</h3>
-        </Row>
-        <Row className="border-bottom" between="xs">
-          <h3>Total Price</h3>
-          <h3>${totalDays * 8 * 15}</h3>
-        </Row>
-        <Space />
-        <Row>
-          <input
-            className="mail-input"
-            type="email"
-            placeholder="Enter Your Email"
-            value={emailValue}
-            onChange={handleInputChange}
-          />
-          <Button
-            disabled={!emailValid || totalDays === 0 || isSending}
-            style={{ width: "100%", marginTop: "5px" }}
-            onClick={handleClick}
-          >
-            {isSending ? "Sending..." : "Send Estimate"}
-          </Button>
-        </Row>
-        {isSent && (
+        <div style={{ position: "sticky" }}>
+          <h2 style={{ textAlign: "center" }}>Cost Analysis </h2>
+          <Row between="xs">
+            <p>App Type</p>
+            <h3>{appType ? "" : "Web"}</h3>
+          </Row>
+          <Row between="xs">
+            <p>Total Days</p>
+            <h3>{totalDays}</h3>
+          </Row>{" "}
+          <Row between="xs">
+            <p>Hours Per Day</p>
+            <h3>8</h3>
+          </Row>{" "}
+          <Row className="border-bottom" between="xs">
+            <p>Per Hours Price</p>
+            <h3>$15</h3>
+          </Row>
+          <Row className="border-bottom" between="xs">
+            <h3>Total Price</h3>
+            <h3>${totalDays * 8 * 15}</h3>
+          </Row>
+          <Space />
           <Row>
-            <p style={{ color: "green", marginTop: "-5%" }}>
-              Estimate sent successfully!
+            <input
+              className="mail-input"
+              type="email"
+              placeholder="Enter Your Email"
+              value={emailValue}
+              onChange={handleInputChange}
+            />
+            <Button
+              disabled={!emailValid || totalDays === 0 || isSending}
+              style={{ width: "100%", marginTop: "5px" }}
+              onClick={handleClick}
+            >
+              {isSending ? "Sending..." : "Send Estimate"}
+            </Button>
+          </Row>
+          {isSent && (
+            <Row>
+              <p style={{ color: "green", marginTop: "-5%" }}>
+                Estimate sent successfully!
+              </p>
+            </Row>
+          )}
+          <Row>
+            <p style={{ fontWeight: "lighter", fontSize: "0.8rem" }}>
+              <strong>Please note : </strong> all cost estimates are intended to
+              be indicative of development costs and timescales only and are
+              exclusive of all hosting costs, paid services or purchased assets
+              of any kind. All prices are in USD and inclusive of sales tax.
             </p>
           </Row>
-        )}
-        <Row>
-          <p style={{ fontWeight: "lighter", fontSize: "0.8rem" }}>
-            <strong>Please note : </strong> all cost estimates are intended to
-            be indicative of development costs and timescales only and are
-            exclusive of all hosting costs, paid services or purchased assets of
-            any kind. All prices are in USD and inclusive of sales tax.
-          </p>
-        </Row>
+        </div>
       </Grid>
     </>
   );

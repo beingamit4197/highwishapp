@@ -1,14 +1,21 @@
 import React from "react";
 import { Row } from "react-flexbox-grid";
 import "../styles/checkbox.css";
-const Checkbox = ({ title, subtitle, onClick, isChecked, checkCircle }) => {
+const Checkbox = ({
+  title,
+  subtitle,
+  onClick,
+  isChecked,
+  isRadio,
+  checkCircle,
+}) => {
   return (
     <div>
       <Row between="xs">
         <label style={{ marginTop: "1rem" }}>
           <input
             className={checkCircle ? "checkbox-with-circle" : ""}
-            type="checkbox"
+            type={isRadio ? "radio" : "checkbox"}
             checked={isChecked}
             onChange={onClick}
           />
