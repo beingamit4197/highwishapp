@@ -35,7 +35,9 @@ const Nav = () => {
         <Space />
         <Row>
           <Col lg={4} md={4} sm={4}>
-            <img src={logoBlack} alt="" />
+            <a href="/">
+              <img src={logoBlack} alt="" />
+            </a>
           </Col>
           <Col lg={5} md={5} sm={6}>
             <Row>

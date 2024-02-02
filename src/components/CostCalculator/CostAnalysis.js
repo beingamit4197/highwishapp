@@ -5,7 +5,7 @@ import { sendEmail } from "../UIassests/EmailEngine";
 import Space from "../UIassests/Space";
 import "../styles/costAnalysis.css";
 
-const CostAnalysis = ({ totalDays, setTotalDays, appType }) => {
+const CostAnalysis = ({ totalDays, setTotalDays, labelType }) => {
   const [emailValue, setEmailValue] = useState("");
   const [emailValid, setEmailValid] = useState(false);
   const [isSending, setIsSending] = useState(false);
@@ -60,7 +60,7 @@ const CostAnalysis = ({ totalDays, setTotalDays, appType }) => {
           <h2 style={{ textAlign: "center" }}>Cost Analysis </h2>
           <Row between="xs">
             <p>App Type</p>
-            <h3>{appType ? "" : "Web"}</h3>
+            <h3>{labelType}</h3>
           </Row>
           <Row between="xs">
             <p>Total Days</p>

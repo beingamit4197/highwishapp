@@ -11,6 +11,7 @@ import AndroidQuestions from "./AndroidQuestions";
 
 const CostCalculator = () => {
   const [totalDays, setTotalDays] = useState(0);
+  const [labelType, setLabelType] = useState("Web");
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -23,6 +24,7 @@ const CostCalculator = () => {
   //     icon.classList.add("rotate-360");
   //   }
   // };
+
   return (
     <>
       <Grid>
@@ -43,19 +45,19 @@ const CostCalculator = () => {
               what it will take to build your app.
             </p>
             <Tabs>
-              <Tab label="Web App">
+              <Tab label="Web App" onClick={() => setLabelType("Web")}>
                 <WebQuestions
                   totalDays={totalDays}
                   setTotalDays={setTotalDays}
                 />
               </Tab>
-              <Tab label="iOS App">
+              <Tab label="iOS App" onClick={() => setLabelType("iOS")}>
                 <IosQuestions
                   totalDays={totalDays}
                   setTotalDays={setTotalDays}
                 />
               </Tab>
-              <Tab label="Android App">
+              <Tab label="Android App" onClick={() => setLabelType("Android")}>
                 <AndroidQuestions
                   totalDays={totalDays}
                   setTotalDays={setTotalDays}
@@ -64,7 +66,7 @@ const CostCalculator = () => {
             </Tabs>
           </Col>
           <Col md={4}>
-            <CostAnalysis totalDays={totalDays} />
+            <CostAnalysis labelType={labelType} totalDays={totalDays} />
           </Col>
         </Row>
       </Grid>

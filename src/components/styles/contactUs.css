@@ -25,3 +25,27 @@ textarea {
   resize: vertical;
   min-height: 100px;
 }
+
+.left-contact-card {
+  background: var(--card-background);
+  padding: 40px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.right-contact-card {
+  background: var(--card-color);
+  padding: 20px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+  .left-contact-card {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .right-contact-card {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}

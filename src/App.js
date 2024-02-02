@@ -7,6 +7,7 @@ import WhyUs from "./components/Nav/WhyUs";
 import ContactUs from "./components/ContactUs";
 import { useEffect } from "react";
 import Services from "./components/Nav/Services";
+import Prices from "./components/LandingPage/Prices";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/services",
     element: <Services />,
+  },
+  {
+    path: "/prices",
+    element: <Prices />,
   },
 ]);
 

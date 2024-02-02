@@ -18,7 +18,7 @@ const WhyUs = () => {
         <Space md />
         <Row between="center">
           <Col md={6}>
-            <Card horizontal style={{ alignItem: "center" }}>
+            <Card horizontal>
               <Row>
                 <Col md={8} xs={10}>
                   <Header> Expertise</Header>

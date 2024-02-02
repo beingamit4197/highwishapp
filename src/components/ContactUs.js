@@ -54,28 +54,12 @@ const ContactUs = () => {
       <Grid>
         <Space lg />
         <Row>
-          <Col
-            style={{
-              background: "var(--card-background)",
-              padding: "40px",
-              borderTopLeftRadius: "15px",
-              borderBottomLeftRadius: "15px",
-            }}
-            md={4}
-          >
+          <Col className="left-contact-card" md={4}>
             <Header>Get in touch!</Header>
             <p>Feel free to contact us at your convenience.</p>
             <SVGs xl type={"contact_us"} />
           </Col>
-          <Col
-            style={{
-              background: "var(--card-color)",
-              padding: "20px",
-              borderTopRightRadius: "15px",
-              borderBottomRightRadius: "15px",
-            }}
-            md={8}
-          >
+          <Col className="right-contact-card" md={8}>
             <h1>Contact Us</h1>
             <p>
               We encourage you to reach out to us should you have any inquiries

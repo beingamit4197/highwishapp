@@ -57,7 +57,7 @@ const Services = () => {
         <Space lg />
         <Row>
           <Col md={4}>
-            <SVGs xl type={"web"} />
+            <SVGs lg type={"web"} />
           </Col>
           <Col md={8}>
             <Card horizontal>
@@ -76,6 +76,8 @@ const Services = () => {
             </Card>
           </Col>
         </Row>
+        <Space />
+
         <Row>
           <Col md={8}>
             <Card horizontal>
@@ -94,12 +96,14 @@ const Services = () => {
             </Card>
           </Col>
           <Col md={4}>
-            <SVGs xl type={"android"} />
+            <SVGs lg type={"android"} />
           </Col>
         </Row>
+        <Space />
+
         <Row>
           <Col md={4}>
-            <SVGs xl sm={12} type={"ios"} />
+            <SVGs lg sm={12} type={"ios"} />
           </Col>
           <Col md={8}>
             <Card horizontal>
