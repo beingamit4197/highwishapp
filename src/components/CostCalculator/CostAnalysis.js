@@ -1,55 +1,57 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Grid, Row } from "react-flexbox-grid";
 import Button from "../UIassests/Button";
 import { sendEmail } from "../UIassests/EmailEngine";
 import Space from "../UIassests/Space";
 import "../styles/costAnalysis.css";
 
-const CostAnalysis = ({ totalDays, setTotalDays, labelType }) => {
+const CostAnalysis = ({
+  totalDays,
+  setTotalDays,
+  labelType,
+  selectedAnswers,
+}) => {
   const [emailValue, setEmailValue] = useState("");
-  const [emailValid, setEmailValid] = useState(false);
+  // const [emailValid, setEmailValid] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [isSent, setIsSent] = useState(false);
-
-  useEffect(() => {
-    if (isSending) {
-      const emailData = {
-        email: emailValue,
-        from_name: "HighWishApp",
-        message: `Your Estimated Value Price: $${
-          totalDays * 8 * 15
-        } for ${totalDays} days, $8 per hour, $15 per hour.`,
-      };
-      const template = "highWishApp_Template";
-
-      sendEmail(emailData, template)
-        .then(() => {
-          setIsSending(false);
-          setIsSent(true);
-          setTimeout(() => {
-            setIsSent(false);
-          }, 3000);
-        })
-        .catch((error) => {
-          console.error("Error sending email:", error);
-          setIsSending(false);
-        });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isSending]);
-
   const handleClick = () => {
-    if (emailValid && totalDays !== 0 && !isSending) {
-      setIsSending(true);
-    }
+    let body = "";
+    Object.entries(selectedAnswers).forEach(([question, answers]) => {
+      body += `${question}\n`;
+      answers.forEach((answer) => {
+        body += `${answer.label} - ${answer.days} days\n`;
+      });
+      body += "\n";
+    });
+
+    const emailData = {
+      email: emailValue,
+      to_name: emailValue,
+      from_name: "HighWishApp",
+      message: body,
+    };
+    const template = "highWishApp_Template";
+
+    sendEmail(emailData, template)
+      .then(() => {
+        setIsSent(true);
+        setTimeout(() => {
+          setIsSent(false);
+        }, 3000);
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+        setIsSending(false);
+      });
   };
 
   const handleInputChange = (e) => {
     setEmailValue(e.target.value);
     const email = e.target.value;
     setEmailValue(email);
-    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    setEmailValid(isValid);
+    // const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    // setEmailValid(isValid);
   };
   console.log("Email Value", emailValue);
 
@@ -88,11 +90,10 @@ const CostAnalysis = ({ totalDays, setTotalDays, labelType }) => {
               onChange={handleInputChange}
             />
             <Button
-              disabled={!emailValid || totalDays === 0 || isSending}
               style={{ width: "100%", marginTop: "5px" }}
               onClick={handleClick}
             >
-              {isSending ? "Sending..." : "Send Estimate"}
+              {isSending ? "Sending..." : `Send ${labelType} Estimate`}
             </Button>
           </Row>
           {isSent && (

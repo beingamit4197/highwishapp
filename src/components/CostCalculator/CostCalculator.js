@@ -12,8 +12,11 @@ import AndroidQuestions from "./AndroidQuestions";
 const CostCalculator = () => {
   const [totalDays, setTotalDays] = useState(0);
   const [labelType, setLabelType] = useState("Web");
+  const [webSelectedAnswers, setWebSelectedAnswers] = useState({});
+  const [iosSelectedAnswers, setIosSelectedAnswers] = useState({});
+  const [androidSelectedAnswers, setAndroidSelectedAnswers] = useState({});
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0 });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -49,24 +52,34 @@ const CostCalculator = () => {
                 <WebQuestions
                   totalDays={totalDays}
                   setTotalDays={setTotalDays}
+                  selectedAnswers={webSelectedAnswers}
+                  setSelectedAnswers={setWebSelectedAnswers}
                 />
               </Tab>
               <Tab label="iOS App" onClick={() => setLabelType("iOS")}>
                 <IosQuestions
                   totalDays={totalDays}
                   setTotalDays={setTotalDays}
+                  selectedAnswers={iosSelectedAnswers}
+                  setSelectedAnswers={setIosSelectedAnswers}
                 />
               </Tab>
               <Tab label="Android App" onClick={() => setLabelType("Android")}>
                 <AndroidQuestions
                   totalDays={totalDays}
                   setTotalDays={setTotalDays}
+                  selectedAnswers={androidSelectedAnswers}
+                  setSelectedAnswers={setAndroidSelectedAnswers}
                 />
               </Tab>
             </Tabs>
           </Col>
           <Col md={4}>
-            <CostAnalysis labelType={labelType} totalDays={totalDays} />
+            <CostAnalysis
+              labelType={labelType}
+              selectedAnswers={webSelectedAnswers}
+              totalDays={totalDays}
+            />
           </Col>
         </Row>
       </Grid>

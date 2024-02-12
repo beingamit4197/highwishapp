@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Grid, Row } from "react-flexbox-grid";
 import Space from "../UIassests/Space";
 import Button from "../UIassests/Button";
@@ -13,19 +13,37 @@ const Nav = () => {
     localStorage.getItem("theme") === "dark" ? "fas fa-moon" : "fas fa-sun"
   );
 
-  const themeSetter = (theme) => {
-    if (theme === "light") {
-      setIcon("fas fa-moon");
-      let body = document.getElementsByClassName("default")[0];
-      body.classList.remove("theme-dark");
-      body.classList.add("theme-light");
-      localStorage.setItem("theme", "light");
+  useEffect(() => {
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") {
+      applyDarkTheme();
     } else {
-      setIcon("fas fa-sun");
-      let body = document.getElementsByClassName("default")[0];
-      body.classList.remove("theme-light");
-      body.classList.add("theme-dark");
-      localStorage.setItem("theme", "dark");
+      applyLightTheme();
+    }
+  }, []);
+
+  const applyDarkTheme = () => {
+    setIcon("fas fa-moon");
+    let body = document.getElementsByClassName("default")[0];
+    body.classList.remove("theme-light");
+    body.classList.add("theme-dark");
+    localStorage.setItem("theme", "dark");
+  };
+
+  const applyLightTheme = () => {
+    setIcon("fas fa-sun");
+    let body = document.getElementsByClassName("default")[0];
+    body.classList.remove("theme-dark");
+    body.classList.add("theme-light");
+    localStorage.setItem("theme", "light");
+  };
+
+  const toggleThemeHandler = () => {
+    const newTheme = toggleTheme();
+    if (newTheme === "dark") {
+      applyDarkTheme();
+    } else {
+      applyLightTheme();
     }
   };
 
@@ -55,7 +73,7 @@ const Nav = () => {
                 circle
                 withBorder
                 onClick={() => {
-                  themeSetter(toggleTheme());
+                  toggleThemeHandler();
                 }}
               >
                 <span

@@ -7,9 +7,14 @@ import Button from "../UIassests/Button";
 import Dialog from "../UIassests/Dialog";
 import Space from "../UIassests/Space";
 
-const WebQuestions = ({ totalDays, setTotalDays }) => {
+const WebQuestions = ({
+  totalDays,
+  setTotalDays,
+  selectedAnswers,
+  setSelectedAnswers,
+}) => {
   const [expandedExpander, setExpandedExpander] = useState(null);
-  const [answers, setAnswers] = useState({});
+  const [answers, setAnswers] = useState(selectedAnswers);
   const [dialog, setDialog] = useState();
 
   const webQuestions = [
@@ -167,6 +172,7 @@ const WebQuestions = ({ totalDays, setTotalDays }) => {
       : [answer];
     console.log(isMulti, temp);
     setAnswers({ ...temp });
+    setSelectedAnswers({ ...temp });
   };
 
   const stringOfAnswers = JSON.stringify(answers);
