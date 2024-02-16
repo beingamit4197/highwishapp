@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/highwishapp/static/css/main.84f2d39d.css",
+    "main.js": "/highwishapp/static/js/main.945de4eb.js",
+    "static/media/fa-solid-900.ttf": "/highwishapp/static/media/fa-solid-900.45a265d0f07b31cde85f.ttf",
+    "static/media/fa-brands-400.ttf": "/highwishapp/static/media/fa-brands-400.6205fd00fb1b573e9f0f.ttf",
+    "static/media/fa-solid-900.woff2": "/highwishapp/static/media/fa-solid-900.fb8184add5a3101ad0a3.woff2",
+    "static/media/fa-brands-400.woff2": "/highwishapp/static/media/fa-brands-400.8d3cabfc66809162fb4d.woff2",
+    "static/media/fa-regular-400.ttf": "/highwishapp/static/media/fa-regular-400.adc51aab4d771ab65f81.ttf",
+    "static/media/Illustration 2.png": "/highwishapp/static/media/Illustration 2.74e517d32fbf62937c4a.png",
+    "static/media/fa-regular-400.woff2": "/highwishapp/static/media/fa-regular-400.e931bc0d14f5bbb1da22.woff2",
+    "static/media/Illustration1.png": "/highwishapp/static/media/Illustration1.42879fee4d7f92f73c36.png",
+    "static/media/web.svg": "/highwishapp/static/media/web.e70f95e5f741ba11a193.svg",
+    "static/media/teamwork.svg": "/highwishapp/static/media/teamwork.745a71ad9b2760a4f142.svg",
+    "static/media/contact_us.svg": "/highwishapp/static/media/contact_us.f421933db86a6b1d209f.svg",
+    "static/media/solution.svg": "/highwishapp/static/media/solution.989cd47d52a26077f4bb.svg",
+    "static/media/fa-v4compatibility.ttf": "/highwishapp/static/media/fa-v4compatibility.2eb7b3ef25042305f3ff.ttf",
+    "static/media/customization.svg": "/highwishapp/static/media/customization.bb1cd44438c2006c99ee.svg",
+    "static/media/ios.svg": "/highwishapp/static/media/ios.7d61d3c3e9075d333bd1.svg",
+    "static/media/android.svg": "/highwishapp/static/media/android.3d44280a8e239b73d937.svg",
+    "static/media/innovative.svg": "/highwishapp/static/media/innovative.3e5729bbef8482138c4f.svg",
+    "static/media/tracking.svg": "/highwishapp/static/media/tracking.78a0a5a295c974d60924.svg",
+    "static/media/happy.svg": "/highwishapp/static/media/happy.6a2afe636d871331a5b4.svg",
+    "static/media/fa-v4compatibility.woff2": "/highwishapp/static/media/fa-v4compatibility.b3049b13a93f07e026fc.woff2",
+    "index.html": "/highwishapp/index.html",
+    "main.84f2d39d.css.map": "/highwishapp/static/css/main.84f2d39d.css.map",
+    "main.945de4eb.js.map": "/highwishapp/static/js/main.945de4eb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.84f2d39d.css",
+    "static/js/main.945de4eb.js"
+  ]
+}
